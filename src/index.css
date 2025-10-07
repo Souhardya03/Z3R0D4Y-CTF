@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+	:root {
+		--background: 24 100% 5%;
+		--foreground: 0 0% 100%;
+
+		--card: 0 0% 8%;
+		--card-foreground: 0 0% 100%;
+
+		--popover: 0 0% 8%;
+		--popover-foreground: 0 0% 100%;
+
+		--primary: 24 100% 50%;
+		--primary-foreground: 0 0% 0%;
+
+		--secondary: 270 100% 25%;
+		--secondary-foreground: 0 0% 100%;
+
+		--muted: 0 0% 15%;
+		--muted-foreground: 0 0% 60%;
+
+		--accent: 24 100% 50%;
+		--accent-foreground: 0 0% 0%;
+
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 0 0% 100%;
+
+		--border: 24 100% 30%;
+		--input: 0 0% 15%;
+		--ring: 24 100% 50%;
+
+		--radius: 0.5rem;
+
+		--gradient-spooky: linear-gradient(
+			135deg,
+			hsl(24 100% 50%),
+			hsl(270 100% 25%)
+		);
+		--shadow-glow: 0 0 40px hsl(24 100% 50% / 0.4);
+		--shadow-purple: 0 0 40px hsl(270 100% 50% / 0.3);
+
+		--sidebar-background: 0 0% 98%;
+
+		--sidebar-foreground: 240 5.3% 26.1%;
+
+		--sidebar-primary: 240 5.9% 10%;
+
+		--sidebar-primary-foreground: 0 0% 98%;
+
+		--sidebar-accent: 240 4.8% 95.9%;
+
+		--sidebar-accent-foreground: 240 5.9% 10%;
+
+		--sidebar-border: 220 13% 91%;
+
+		--sidebar-ring: 217.2 91.2% 59.8%;
+	}
+
+	.dark {
+		--background: 24 100% 5%;
+		--foreground: 0 0% 100%;
+
+		--card: 0 0% 8%;
+		--card-foreground: 0 0% 100%;
+
+		--popover: 0 0% 8%;
+		--popover-foreground: 0 0% 100%;
+
+		--primary: 24 100% 50%;
+		--primary-foreground: 0 0% 0%;
+
+		--secondary: 270 100% 25%;
+		--secondary-foreground: 0 0% 100%;
+
+		--muted: 0 0% 15%;
+		--muted-foreground: 0 0% 60%;
+
+		--accent: 24 100% 50%;
+		--accent-foreground: 0 0% 0%;
+
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 0 0% 100%;
+
+		--border: 24 100% 30%;
+		--input: 0 0% 15%;
+		--ring: 24 100% 50%;
+
+		--sidebar-background: 0 0% 5%;
+		--sidebar-foreground: 0 0% 100%;
+		--sidebar-primary: 24 100% 50%;
+		--sidebar-primary-foreground: 0 0% 0%;
+		--sidebar-accent: 0 0% 10%;
+		--sidebar-accent-foreground: 0 0% 100%;
+		--sidebar-border: 24 100% 30%;
+		--sidebar-ring: 24 100% 50%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+}
+
+@font-face {
+	font-family: "Groovy";
+	src: url("/fonts/Groovy.otf") format("opentype");
+}
+@font-face {
+	font-family: "Haunted";
+	src: url("/fonts/Haunted.otf") format("opentype");
+}
+@font-face {
+	font-family: "Quick";
+	src: url("/fonts/Quick.otf") format("opentype");
+}
+@font-face {
+	font-family: "Spooky";
+	src: url("/fonts/Spooky.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Stranger";
+	src: url("/fonts/Stranger.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "BuggyTrick";
+	src: url("/fonts/BuggyTrick.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "BloodLust";
+	src: url("/fonts/BloodLust.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "TrickTreat";
+	src: url("/fonts/TrickTreat.otf") format("opentype");
+}
+
+.groovy {
+	font-family: "Groovy", sans-serif;
+}
+.haunted {
+	font-family: "Haunted", sans-serif;
+}
+.quick {
+	font-family: "Quick", sans-serif;
+}
+.spooky {
+	font-family: "Spooky", sans-serif;
+}
+.stranger {
+	font-family: "Stranger", sans-serif;
+}
+.buggytrick {
+	font-family: "BuggyTrick", sans-serif;
+}
+.bloodlust {
+	font-family: "BloodLust", sans-serif;
+}
+
+.tricktreat {
+	font-family: "Metal Mania", system-ui;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.dust {
+	position: fixed;
+	width: 8px;
+	height: 8px;
+	background-color: rgba(230, 233, 234, 0.8);
+	border-radius: 75%;
+	pointer-events: none;
+	animation: dust-animation 1s ease-out forwards;
+	box-shadow: 0 0 8px rgba(230, 233, 234, 0.8);
+	z-index: 10;
+}
+
+@keyframes dust-animation {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
+body {
+	font-family: "Alan Sans", sans-serif;
+	font-optical-sizing: auto;
+
+	font-style: normal;
+}
