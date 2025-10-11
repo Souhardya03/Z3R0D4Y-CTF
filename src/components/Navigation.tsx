@@ -52,7 +52,7 @@ const Navigation = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 text-2xl font-bold z-50">
-              <Ghost className="w-6 h-6 sm:w-8 sm:h-8 text-primary animate-pulse" />
+              <img src="/images/Logo.png" className="w-8 h-8 sm:w-10 sm:h-10 text-primary " />
               <span className="bg-gradient-to-r tricktreat text-xl sm:text-2xl lg:text-3xl from-primary to-secondary bg-clip-text text-transparent">
                 Z3ROD4Y CTF
               </span>
@@ -141,7 +141,7 @@ const Navigation = () => {
                     >
                       <Link
                         to={item.path}
-                        className={`group relative block px-6 py-4 text-2xl haunted transition-all duration-300 rounded-lg ${
+                        className={`group relative haunted block px-6 py-4 text-2xl haunted transition-all duration-300 rounded-lg ${
                           location.pathname === item.path
                             ? "text-primary bg-primary/10"
                             : "text-foreground hover:text-primary hover:bg-primary/5"

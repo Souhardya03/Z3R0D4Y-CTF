@@ -14,7 +14,7 @@ const Event = () => {
 						initial={{ opacity: 0, scale: 0.5 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 1, ease: "backOut" }}
-						className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-center haunted"
+						className="text-5xl sm:text-5xl md:text-6xl font-bold mb-4 text-center haunted"
 					>
 						<span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
 							Spooky CTF 2024

@@ -103,7 +103,7 @@ const Team = () => {
 			<div className="pt-24 pb-16 px-4">
 				<div className="container mx-auto max-w-6xl">
 					<div className="team-header">
-						<h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-center haunted">
+						<h1 className="text-5xl sm:text-5xl md:text-6xl font-bold mb-4 text-center haunted">
 							<span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
 								Meet the Haunters
 							</span>

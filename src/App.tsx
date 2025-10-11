@@ -11,6 +11,7 @@ import NotFound from "./pages/NotFound";
 import PixieDust from "./components/PixelDust";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,6 +38,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
