@@ -170,7 +170,7 @@ const Team = () => {
 							and the drive, we want you!
 						</p>
 						<div className="font-mono text-xs sm:text-sm md:text-base text-muted-foreground">
-							<p>$ echo "contact@spookyctf.com"</p>
+							<p>$ echo "contact@Z3R0D4YCTF.com"</p>
 							<p className="text-primary mt-2">
 								&gt; Ready to embrace the darkness?
 							</p>
