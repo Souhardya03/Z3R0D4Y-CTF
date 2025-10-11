@@ -87,11 +87,11 @@ const Home = () => {
 	const secs = Math.floor((diff / 1000) % 60);
 
 	return (
-		<div className="min-h-screen bg-background" ref={heroRef}>
+		<div className=" bg-background" ref={heroRef}>
 			<Navigation />
 
 			{/* Hero Section */}
-			<section className="relative min-h-screen gap-10 flex items-center justify-center overflow-hidden px-4">
+			<section className="relative pt-32  gap-10 flex items-center justify-center overflow-hidden px-4">
 				<div
 					className="absolute inset-0 bg-cover bg-center"
 					style={{ backgroundImage: `url(${heroImage})` }}>
@@ -99,7 +99,7 @@ const Home = () => {
 				</div>
 
 				<div className="relative z-10 text-center max-w-6xl mx-auto">
-					<h1 className="hero-title text-5xl sm:text-7xl md:text-8xl lg:text-[10em] font-bold mb-6">
+					<h1 className="hero-title text-6xl sm:text-7xl md:text-8xl lg:text-[10em] font-bold mb-6">
 						<span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text spooky text-transparent">
 							Z3ROD4Y CTF
 						</span>
@@ -109,14 +109,14 @@ const Home = () => {
 					</p>
 					<div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center mb-10 md:mb-14">
 						<Link to="/event">
-							<Button className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground text-lg md:text-2xl quick py-6 md:py-8 px-6 shadow-[0_0_20px_rgba(255,115,0,0.5)] hover:shadow-[0_0_30px_rgba(255,115,0,0.8)] transition-all duration-300">
+							<Button className="md:w-full w-2/3 sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground text-lg md:text-2xl quick py-6 md:py-8 px-6 shadow-[0_0_20px_rgba(255,115,0,0.5)] hover:shadow-[0_0_30px_rgba(255,115,0,0.8)] transition-all duration-300">
 								Join the Hunt
 							</Button>
 						</Link>
 						<Link to="/about">
 							<Button
 								variant="outline"
-								className="w-full sm:w-auto border-primary shadow-[0_0_20px_rgba(255,115,0,0.5)] text-lg md:text-2xl quick py-6 md:py-8 px-6 text-primary hover:bg-primary/10">
+								className="md:w-full w-2/3 sm:w-auto hover:text-white transition-colors border-primary shadow-[0_0_20px_rgba(255,115,0,0.5)] text-lg md:text-2xl quick py-6 md:py-8 px-6 text-primary hover:bg-primary/10">
 								Learn More
 							</Button>
 						</Link>
@@ -131,10 +131,10 @@ const Home = () => {
 							<div
 								key={t.label}
 								className="countdown-box rounded-lg border bg-zinc-900/40 py-3 md:py-4 hover:scale-110 transition-transform">
-								<div className="text-2xl sm:text-3xl md:text-6xl spooky font-extrabold tabular-nums">
+								<div className="text-4xl sm:text-3xl md:text-6xl spooky font-extrabold tabular-nums">
 									{String(t.v).padStart(2, "0")}
 								</div>
-								<div className="text-[16px] uppercase groovy tracking-widest text-muted-foreground">
+								<div className="md:text-[16px] text-[12px] uppercase groovy tracking-widest text-muted-foreground">
 									{t.label}
 								</div>
 							</div>
@@ -144,7 +144,7 @@ const Home = () => {
 			</section>
 
 			{/* Features Section */}
-			<section className="py-10 md:py-20 px-4" ref={featuresRef}>
+			<section className="py-10 md:py-24 px-4" ref={featuresRef}>
 				<div className="container mx-auto">
 					<div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
 						<div className="feature-card text-center p-6 md:p-8 bg-card border border-primary/30 rounded-lg transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,115,0,0.3)]">

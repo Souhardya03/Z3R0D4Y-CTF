@@ -205,6 +205,6 @@ All colors MUST be HSL.
 body {
 	font-family: "Alan Sans", sans-serif;
 	font-optical-sizing: auto;
-
+	overflow-x: hidden;
 	font-style: normal;
 }
