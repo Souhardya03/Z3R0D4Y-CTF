@@ -17,7 +17,7 @@ const Event = () => {
 						className="text-5xl sm:text-5xl md:text-6xl font-bold mb-4 text-center haunted"
 					>
 						<span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-							Spooky CTF 2024
+							Z3R0D4Y CTF 2025
 						</span>
 					</motion.h1>
 					
@@ -51,7 +51,7 @@ const Event = () => {
 											Date
 										</h3>
 										<p className="text-sm md:text-lg text-muted-foreground">
-											October 31st, 2024
+											October 31st, 2025
 										</p>
 									</div>
 								</div>
