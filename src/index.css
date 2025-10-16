@@ -152,6 +152,11 @@ All colors MUST be HSL.
 	src: url("/fonts/TrickTreat.otf") format("opentype");
 }
 
+@font-face {
+	font-family: "SpookyZombie";
+	src: url("/fonts/SoopkyZombie.ttf") format("truetype");
+}
+
 .groovy {
 	font-family: "Groovy", sans-serif;
 }
@@ -163,6 +168,9 @@ All colors MUST be HSL.
 }
 .spooky {
 	font-family: "Spooky", sans-serif;
+}
+.spookyzombie {
+	font-family: "SpookyZombie", sans-serif;
 }
 .stranger {
 	font-family: "Stranger", sans-serif;

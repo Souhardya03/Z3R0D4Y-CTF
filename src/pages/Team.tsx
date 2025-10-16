@@ -67,7 +67,7 @@ const Team = () => {
 		return () => ctx.revert();
 	}, []);
 
-	const teamMembers = [
+	const eventLeaders = [
 		{
 			name: "Amrik Hore",
 			role: "Event Lead & Challenge Creator",
@@ -78,10 +78,21 @@ const Team = () => {
 			github: "",
 		},
 		{
+			name: "Sarthak Ghosh",
+			role: "Event Coordinator & Challenge Creator",
+			image: teamMember1,
+			specialty: "ECE'27, JGEC",
+			linkedin: "",
+			twitter: "",
+			github: "",
+		},
+	];
+
+	const challengeCreators = [
+		{
 			name: "Purbayan Kr. Das",
 			role: "Challenge Creator",
-			image:
-				"/images/Purbayan.jpg",
+			image: "/images/Purbayan.jpg",
 			specialty: "ECE'26, JGEC",
 			linkedin:
 				"https://www.linkedin.com/in/purbayan-kumar-das-350037256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -91,22 +102,68 @@ const Team = () => {
 		{
 			name: "Kaustav Das",
 			role: "Challenge Creator",
-			image:
-				"/images/Kaustav.jpg",
+			image: "/images/Kaustav.jpg",
 			specialty: "EE'26, JGEC",
 			linkedin: "https://www.linkedin.com/in/kaustav258",
 			twitter: "https://x.com/Kaustav25821",
 			github: "https://github.com/kaustav258",
 		},
 		{
+			name: "Dharitri Roy",
+			role: "Challenge Creator",
+			image: "/images/Kaustav.jpg",
+			specialty: "IT'27, JGEC",
+			linkedin: "https://www.linkedin.com/in/kaustav258",
+			twitter: "https://x.com/Kaustav25821",
+			github: "https://github.com/kaustav258",
+		},
+		{
+			name: "Agniva Shee",
+			role: "Challenge Creator",
+			image: "/images/Kaustav.jpg",
+			specialty: "EE'27, JGEC",
+			linkedin: "https://www.linkedin.com/in/kaustav258",
+			twitter: "https://x.com/Kaustav25821",
+			github: "https://github.com/kaustav258",
+		},
+		{
+			name: "Rohit Siddha",
+			role: "Challenge Creator",
+			image: "/images/Kaustav.jpg",
+			specialty: "IT'27, JGEC",
+			linkedin: "https://www.linkedin.com/in/kaustav258",
+			twitter: "https://x.com/Kaustav25821",
+			github: "https://github.com/kaustav258",
+		},
+	];
+
+	const webTeam = [
+		{
 			name: "Souhardya Deb",
 			role: "Web Lead",
-			image:
-				"/images/Souhardya.jpg",
+			image: "/images/Souhardya.jpg",
 			specialty: "ECE'26, JGEC",
 			linkedin: "https://www.linkedin.com/in/souhardya-deb-921578254/",
 			twitter: "https://x.com/DarkWarrio28389",
 			github: "https://github.com/Souhardya03",
+		},
+		{
+			name: "Rajdip Pal",
+			role: "Web Team",
+			image: "/images/rajdip.png",
+			specialty: "CSE'27, JGEC",
+			linkedin: "https://www.linkedin.com/in/rajdip-pal/",
+			// twitter: "https://x.com/DarkWarrio28389",
+			github: "https://github.com/Rajdip-Pal",
+		},
+		{
+			name: "Dipesh Das",
+			role: "Designer",
+			image: "/images/Dipesh.jpg",
+			specialty: "CSE'28, JGEC",
+			linkedin: "https://www.linkedin.com/in/d1p3sh-d4s-4b1dd3n?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			twitter: "https://x.com/dipeshdas0125?t=CvhLJIrpEKxxMSjgj-NI5A&s=09",
+			github: "https://github.com/dipesh-2874",
 		},
 	];
 
@@ -129,23 +186,76 @@ const Team = () => {
 						</p>
 					</div>
 
-					{/* Team Grid */}
-					<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
-						{teamMembers.map((member) => (
-							<div
-								key={member.name}
-								className="team-card">
-								<TeamCard
-									name={member.name}
-									role={member.role}
-									image={member.image}
-									specialty={member.specialty}
-									linkedin={member.linkedin}
-									twitter={member.twitter}
-									github={member.github}
-								/>
-							</div>
-						))}
+					{/* Event Lead & Coordinator Section */}
+					<div className="mb-12 md:mb-16">
+						<h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-primary buggytrick">
+							Event Lead & Coordinator
+						</h2>
+						<div className="grid sm:grid-cols-2 gap-6 md:gap-8 max-w-xl mx-auto">
+							{eventLeaders.map((member) => (
+								<div
+									key={member.name}
+									className="team-card">
+									<TeamCard
+										name={member.name}
+										role={member.role}
+										image={member.image}
+										specialty={member.specialty}
+										linkedin={member.linkedin}
+										twitter={member.twitter}
+										github={member.github}
+									/>
+								</div>
+							))}
+						</div>
+					</div>
+
+					{/* Challenge Creators Section */}
+					<div className="mb-12 md:mb-16">
+						<h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary buggytrick">
+							Challenge Creators
+						</h2>
+						<div className="grid sm:grid-cols-2 lg:grid-cols-4 items-center gap-6 md:gap-8">
+							{challengeCreators.map((member) => (
+								<div
+									key={member.name}
+									className="team-card">
+									<TeamCard
+										name={member.name}
+										role={member.role}
+										image={member.image}
+										specialty={member.specialty}
+										linkedin={member.linkedin}
+										twitter={member.twitter}
+										github={member.github}
+									/>
+								</div>
+							))}
+						</div>
+					</div>
+
+					{/* Web & Design Team Section */}
+					<div className="mb-12 md:mb-16">
+						<h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-primary buggytrick">
+							Web & Design Team
+						</h2>
+						<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
+							{webTeam.map((member) => (
+								<div
+									key={member.name}
+									className="team-card">
+									<TeamCard
+										name={member.name}
+										role={member.role}
+										image={member.image}
+										specialty={member.specialty}
+										linkedin={member.linkedin}
+										twitter={member.twitter}
+										github={member.github}
+									/>
+								</div>
+							))}
+						</div>
 					</div>
 
 					{/* Team Stats */}
