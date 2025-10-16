@@ -215,7 +215,7 @@ const Team = () => {
 						<h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary buggytrick">
 							Challenge Creators
 						</h2>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-4 items-center gap-6 md:gap-8">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-4 items-center gap-6 md:gap-8">
 							{challengeCreators.map((member) => (
 								<div
 									key={member.name}
@@ -239,7 +239,7 @@ const Team = () => {
 						<h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-primary buggytrick">
 							Web & Design Team
 						</h2>
-						<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
+						<div className="grid sm:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
 							{webTeam.map((member) => (
 								<div
 									key={member.name}
