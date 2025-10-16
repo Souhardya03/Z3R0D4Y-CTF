@@ -69,28 +69,44 @@ const Team = () => {
 
 	const teamMembers = [
 		{
-			name: "Shadow Walker",
-			role: "Team Lead",
+			name: "Amrik Hore",
+			role: "Event Lead & Challenge Creator",
 			image: teamMember1,
-			specialty: "Web Exploitation & Binary Hacking",
+			specialty: "ECE'27, JGEC",
+			linkedin: "",
+			twitter: "",
+			github: "",
 		},
 		{
-			name: "Cipher Ghost",
-			role: "Crypto Master",
-			image: teamMember2,
-			specialty: "Cryptography & Code Breaking",
+			name: "Purbayan Kr. Das",
+			role: "Challenge Creator",
+			image:
+				"/images/Purbayan.jpg",
+			specialty: "ECE'26, JGEC",
+			linkedin:
+				"https://www.linkedin.com/in/purbayan-kumar-das-350037256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+			twitter: "https://x.com/purb03ragnarok",
+			github: "https://github.com/purb03ragnarok",
 		},
 		{
-			name: "Phantom Debugger",
-			role: "Reverse Engineer",
-			image: teamMember3,
-			specialty: "Malware Analysis & RE",
+			name: "Kaustav Das",
+			role: "Challenge Creator",
+			image:
+				"/images/Kaustav.jpg",
+			specialty: "EE'26, JGEC",
+			linkedin: "https://www.linkedin.com/in/kaustav258",
+			twitter: "https://x.com/Kaustav25821",
+			github: "https://github.com/kaustav258",
 		},
 		{
-			name: "Digital Wraith",
-			role: "Forensics Expert",
-			image: teamMember4,
-			specialty: "Digital Forensics & OSINT",
+			name: "Souhardya Deb",
+			role: "Web Lead",
+			image:
+				"/images/Souhardya.jpg",
+			specialty: "ECE'26, JGEC",
+			linkedin: "https://www.linkedin.com/in/souhardya-deb-921578254/",
+			twitter: "https://x.com/DarkWarrio28389",
+			github: "https://github.com/Souhardya03",
 		},
 	];
 
@@ -124,6 +140,9 @@ const Team = () => {
 									role={member.role}
 									image={member.image}
 									specialty={member.specialty}
+									linkedin={member.linkedin}
+									twitter={member.twitter}
+									github={member.github}
 								/>
 							</div>
 						))}
@@ -170,7 +189,7 @@ const Team = () => {
 							and the drive, we want you!
 						</p>
 						<div className="font-mono text-xs sm:text-sm md:text-base text-muted-foreground">
-							<p>$ echo "contact@Z3R0D4YCTF.com"</p>
+							<p>$ echo "info@zerologon.co.in"</p>
 							<p className="text-primary mt-2">
 								&gt; Ready to embrace the darkness?
 							</p>

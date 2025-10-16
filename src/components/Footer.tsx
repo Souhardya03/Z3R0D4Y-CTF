@@ -6,7 +6,11 @@ import {
 	Mail,
 	MapPin,
 	Calendar,
+	Facebook,
+	Instagram,
 } from "lucide-react";
+import { AiOutlineDiscord } from "react-icons/ai";
+
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -14,25 +18,35 @@ const Footer = () => {
 
 	const socialLinks = [
 		{
-			icon: <Github className="w-5 h-5" />,
-			href: "https://github.com/yourteam",
-			label: "GitHub",
+			icon: <Facebook className="w-5 h-5" />,
+			href: "https://www.facebook.com/z3r0l0g0n?mibextid=ZbWKwL",
+			label: "Facebook",
+		},
+		{
+			icon: <Instagram className="w-5 h-5" />,
+			href: "https://www.instagram.com/cybercell.jgec/?utm_source=qr",
+			label: "LinkedIn",
 		},
 		{
 			icon: <Twitter className="w-5 h-5" />,
-			href: "https://twitter.com/yourteam",
+			href: "https://x.com/z3r0_l0g0n?t=gFtHpJ_ibMGmfw8_IScAbw&s=08",
 			label: "Twitter",
 		},
 		{
 			icon: <Linkedin className="w-5 h-5" />,
-			href: "https://linkedin.com/company/yourteam",
+			href: "https://www.linkedin.com/company/z3r0l0g0n/",
 			label: "LinkedIn",
 		},
 		{
-			icon: <Mail className="w-5 h-5" />,
-			href: "mailto:contact@zeroday.com",
-			label: "Email",
+			icon: <AiOutlineDiscord className="w-5 h-5" />,
+			href: "https://discord.gg/3mwQ9kQdx8",
+			label: "Discord",
 		},
+		// {
+		// 	icon: <Mail className="w-5 h-5" />,
+		// 	href: "mailto:info@zerologon.co.in",
+		// 	label: "Email",
+		// },
 	];
 
 	const quickLinks = [
@@ -123,7 +137,7 @@ const Footer = () => {
 						<div className="mt-6 p-4 bg-card/50 border border-primary/20 rounded-lg">
 							<p className="text-xs text-muted-foreground font-mono">
 								<span className="text-primary">$ </span>echo
-								"contact@zeroday.com"
+								"info@zerologon.co.in"
 							</p>
 						</div>
 					</div>
@@ -133,8 +147,8 @@ const Footer = () => {
 				<div className="h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent mb-8"></div>
 
 				{/* Bottom Bar */}
-				<div className="flex flex-col md:flex-row items-center justify-between gap-4">
-					<div className="text-center md:text-left">
+				<div className="flex flex-col md:flex-row items-center justify-center gap-4">
+					<div className="text-center">
 						<p className="text-sm text-muted-foreground">
 							© {currentYear}{" "}
 							<span className="text-primary font-semibold">Z3R0D4Y CTF</span>.
@@ -145,7 +159,7 @@ const Footer = () => {
 						</p>
 					</div>
 
-					<div className="flex gap-2 md:gap-6 text-xs text-muted-foreground">
+					{/* <div className="flex gap-2 md:gap-6 text-xs text-muted-foreground">
 						<a
 							href="#"
 							className="hover:text-primary transition-colors duration-300">
@@ -163,7 +177,7 @@ const Footer = () => {
 							className="hover:text-primary transition-colors duration-300">
 							Code of Conduct
 						</a>
-					</div>
+					</div> */}
 				</div>
 
 				{/* Spooky Message */}
