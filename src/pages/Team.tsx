@@ -96,9 +96,9 @@ const Team: React.FC = () => {
 			role: "Challenge Creator",
 			image: "/images/Rohit.jpg",
 			specialty: "IT'27, JGEC",
-			linkedin: "https://www.linkedin.com/in/kaustav258",
-			twitter: "https://x.com/Kaustav25821",
-			github: "https://github.com/kaustav258",
+			linkedin: "https://www.linkedin.com/in/rohit-siddha-b9446828a/",
+			twitter: "https://x.com/H3X0N_U53R",
+			github: "https://github.com/RohitSiddha28",
 		},
 	];
 
