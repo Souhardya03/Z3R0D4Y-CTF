@@ -1,94 +1,41 @@
 import Navigation from "@/components/Navigation";
 import TeamCard from "@/components/TeamCard";
 import teamMember1 from "@/assets/team-member-1.jpg";
-import teamMember2 from "@/assets/team-member-2.jpg";
-import teamMember3 from "@/assets/team-member-3.jpg";
-import teamMember4 from "@/assets/team-member-4.jpg";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, Variants } from "framer-motion";
 
-gsap.registerPlugin(ScrollTrigger);
+interface TeamMember {
+	name: string;
+	role: string;
+	image: string;
+	specialty: string;
+	linkedin: string;
+	twitter?: string;
+	github: string;
+}
 
-const Team = () => {
-	const containerRef = useRef(null);
-
-	useEffect(() => {
-		const ctx = gsap.context(() => {
-			gsap.from(".team-header", {
-				opacity: 0,
-				y: -80,
-				duration: 1,
-				ease: "power3.out",
-			});
-
-			gsap.from(".team-card", {
-				scrollTrigger: {
-					trigger: ".team-card",
-					start: "top 85%",
-					toggleActions: "play none none reverse",
-				},
-				opacity: 0,
-				scale: 0.7,
-				rotateY: 90,
-				stagger: 0.2,
-				duration: 1,
-				ease: "back.out(1.7)",
-			});
-
-			gsap.utils.toArray(".stat-card").forEach((card, i) => {
-				gsap.from(card as HTMLElement, {
-					scrollTrigger: {
-						trigger: card as HTMLElement,
-						start: "top 85%",
-						toggleActions: "play none none reverse",
-					},
-					opacity: 0,
-					y: 60,
-					duration: 0.8,
-					ease: "power3.out",
-					delay: i * 0.15,
-				});
-			});
-
-			gsap.from(".join-section", {
-				scrollTrigger: {
-					trigger: ".join-section",
-					start: "top 80%",
-					toggleActions: "play none none reverse",
-				},
-				opacity: 0,
-				scale: 0.9,
-				duration: 1,
-				ease: "power3.out",
-			});
-		}, containerRef);
-
-		return () => ctx.revert();
-	}, []);
-
-	const eventLeaders = [
+const Team: React.FC = () => {
+	const eventLeaders: TeamMember[] = [
 		{
 			name: "Amrik Hore",
-			role: "Event Lead & Challenge Creator",
+			role: "Event Lead",
 			image: teamMember1,
 			specialty: "ECE'27, JGEC",
-			linkedin: "",
-			twitter: "",
-			github: "",
+			linkedin: "https://www.linkedin.com/in/amrikhore/",
+			twitter: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1",
+			github: "https://github.com/amrikhore86",
 		},
 		{
 			name: "Sarthak Ghosh",
-			role: "Event Coordinator & Challenge Creator",
-			image: teamMember1,
-			specialty: "ECE'27, JGEC",
-			linkedin: "",
+			role: "Event Coordinator",
+			image: "/images/Sarthak.jpg",
+			specialty: "EE'27, JGEC",
+			linkedin: "https://www.linkedin.com/in/sharthak-ghosh-644a69294/",
 			twitter: "",
-			github: "",
+			github: "https://github.com/sgvc7",
 		},
 	];
 
-	const challengeCreators = [
+	const challengeCreators: TeamMember[] = [
 		{
 			name: "Purbayan Kr. Das",
 			role: "Challenge Creator",
@@ -107,6 +54,24 @@ const Team = () => {
 			linkedin: "https://www.linkedin.com/in/kaustav258",
 			twitter: "https://x.com/Kaustav25821",
 			github: "https://github.com/kaustav258",
+		},
+		{
+			name: "Amrik Hore",
+			role: "Challenge Creator",
+			image: teamMember1,
+			specialty: "ECE'27, JGEC",
+			linkedin: "https://www.linkedin.com/in/amrikhore/",
+			twitter: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1",
+			github: "https://github.com/amrikhore86",
+		},
+		{
+			name: "Sarthak Ghosh",
+			role: "Challenge Creator",
+			image: "/images/Sarthak.jpg",
+			specialty: "EE'27, JGEC",
+			linkedin: "https://www.linkedin.com/in/sharthak-ghosh-644a69294/",
+			twitter: "",
+			github: "https://github.com/sgvc7",
 		},
 		{
 			name: "Dharitri Roy",
@@ -129,7 +94,7 @@ const Team = () => {
 		{
 			name: "Rohit Siddha",
 			role: "Challenge Creator",
-			image: "/images/Kaustav.jpg",
+			image: "/images/Rohit.jpg",
 			specialty: "IT'27, JGEC",
 			linkedin: "https://www.linkedin.com/in/kaustav258",
 			twitter: "https://x.com/Kaustav25821",
@@ -137,7 +102,7 @@ const Team = () => {
 		},
 	];
 
-	const webTeam = [
+	const webTeam: TeamMember[] = [
 		{
 			name: "Souhardya Deb",
 			role: "Web Lead",
@@ -153,7 +118,6 @@ const Team = () => {
 			image: "/images/rajdip.png",
 			specialty: "CSE'27, JGEC",
 			linkedin: "https://www.linkedin.com/in/rajdip-pal/",
-			// twitter: "https://x.com/DarkWarrio28389",
 			github: "https://github.com/Rajdip-Pal",
 		},
 		{
@@ -167,15 +131,82 @@ const Team = () => {
 		},
 	];
 
+	const headerVariants: Variants = {
+		hidden: { opacity: 0, y: -80 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 1,
+				ease: [0.25, 0.46, 0.45, 0.94]
+			}
+		}
+	};
+
+	const cardContainerVariants: Variants = {
+		hidden: { opacity: 0 },
+		visible: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.2
+			}
+		}
+	};
+
+	const cardVariants: Variants = {
+		hidden: { 
+			opacity: 0, 
+			scale: 0.7,
+			rotateY: 90
+		},
+		visible: {
+			opacity: 1,
+			scale: 1,
+			rotateY: 0,
+			transition: {
+				duration: 1,
+				ease: [0.68, -0.55, 0.265, 1.55]
+			}
+		}
+	};
+
+	const statVariants: Variants = {
+		hidden: { opacity: 0, y: 60 },
+		visible: (i: number) => ({
+			opacity: 1,
+			y: 0,
+			transition: {
+				duration: 0.8,
+				delay: i * 0.15,
+				ease: [0.25, 0.46, 0.45, 0.94]
+			}
+		})
+	};
+
+	const joinVariants: Variants = {
+		hidden: { opacity: 0, scale: 0.9 },
+		visible: {
+			opacity: 1,
+			scale: 1,
+			transition: {
+				duration: 1,
+				ease: [0.25, 0.46, 0.45, 0.94]
+			}
+		}
+	};
+
 	return (
-		<div
-			className="min-h-screen bg-background"
-			ref={containerRef}>
+		<div className="min-h-screen bg-background">
 			<Navigation />
 
 			<div className="pt-24 pb-16 px-4">
 				<div className="container mx-auto max-w-6xl">
-					<div className="team-header">
+					<motion.div
+						initial="hidden"
+						animate="visible"
+						variants={headerVariants}
+						className="team-header"
+					>
 						<h1 className="text-5xl sm:text-5xl md:text-6xl font-bold mb-4 text-center haunted">
 							<span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
 								Meet the Haunters
@@ -184,18 +215,32 @@ const Team = () => {
 						<p className="text-lg sm:text-xl md:text-2xl text-center text-muted-foreground mb-12 md:mb-16 spooky">
 							The Elite Spirits Behind Spooky CTF
 						</p>
-					</div>
+					</motion.div>
 
 					{/* Event Lead & Coordinator Section */}
 					<div className="mb-12 md:mb-16">
-						<h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-primary buggytrick">
+						<motion.h2
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, margin: "-100px" }}
+							transition={{ duration: 0.6 }}
+							className="text-3xl md:text-4xl font-bold mb-8 text-center text-primary buggytrick"
+						>
 							Event Lead & Coordinator
-						</h2>
-						<div className="grid sm:grid-cols-2 gap-6 md:gap-8 max-w-xl mx-auto">
-							{eventLeaders.map((member) => (
-								<div
+						</motion.h2>
+						<motion.div
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true, margin: "-100px" }}
+							variants={cardContainerVariants}
+							className="grid sm:grid-cols-2 gap-6 md:gap-8 max-w-xl mx-auto"
+						>
+							{eventLeaders.map((member: TeamMember) => (
+								<motion.div
 									key={member.name}
-									className="team-card">
+									variants={cardVariants}
+									className="team-card"
+								>
 									<TeamCard
 										name={member.name}
 										role={member.role}
@@ -205,21 +250,35 @@ const Team = () => {
 										twitter={member.twitter}
 										github={member.github}
 									/>
-								</div>
+								</motion.div>
 							))}
-						</div>
+						</motion.div>
 					</div>
 
 					{/* Challenge Creators Section */}
 					<div className="mb-12 md:mb-16">
-						<h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary buggytrick">
+						<motion.h2
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, margin: "-100px" }}
+							transition={{ duration: 0.6 }}
+							className="text-3xl md:text-4xl font-bold mb-8 text-center text-secondary buggytrick"
+						>
 							Challenge Creators
-						</h2>
-						<div className="grid sm:grid-cols-3 lg:grid-cols-4 items-center gap-6 md:gap-8">
-							{challengeCreators.map((member) => (
-								<div
-									key={member.name}
-									className="team-card">
+						</motion.h2>
+						<motion.div
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true, margin: "-100px" }}
+							variants={cardContainerVariants}
+							className="grid sm:grid-cols-3 lg:grid-cols-4 items-center gap-6 md:gap-8"
+						>
+							{challengeCreators.map((member: TeamMember, index: number) => (
+								<motion.div
+									key={`${member.name}-${member.specialty}-${index}`}
+									variants={cardVariants}
+									className="team-card"
+								>
 									<TeamCard
 										name={member.name}
 										role={member.role}
@@ -229,21 +288,35 @@ const Team = () => {
 										twitter={member.twitter}
 										github={member.github}
 									/>
-								</div>
+								</motion.div>
 							))}
-						</div>
+						</motion.div>
 					</div>
 
 					{/* Web & Design Team Section */}
 					<div className="mb-12 md:mb-16">
-						<h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-primary buggytrick">
+						<motion.h2
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, margin: "-100px" }}
+							transition={{ duration: 0.6 }}
+							className="text-3xl md:text-4xl font-bold mb-8 text-center text-primary buggytrick"
+						>
 							Web & Design Team
-						</h2>
-						<div className="grid sm:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
-							{webTeam.map((member) => (
-								<div
+						</motion.h2>
+						<motion.div
+							initial="hidden"
+							whileInView="visible"
+							viewport={{ once: true, margin: "-100px" }}
+							variants={cardContainerVariants}
+							className="grid sm:grid-cols-3 lg:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto"
+						>
+							{webTeam.map((member: TeamMember) => (
+								<motion.div
 									key={member.name}
-									className="team-card">
+									variants={cardVariants}
+									className="team-card"
+								>
 									<TeamCard
 										name={member.name}
 										role={member.role}
@@ -253,43 +326,66 @@ const Team = () => {
 										twitter={member.twitter}
 										github={member.github}
 									/>
-								</div>
+								</motion.div>
 							))}
-						</div>
+						</motion.div>
 					</div>
 
 					{/* Team Stats */}
-					<div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-						<div className="stat-card text-center bg-card border border-primary/30 rounded-lg p-6 md:p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,115,0,0.3)]">
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, margin: "-100px" }}
+						className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16"
+					>
+						<motion.div
+							custom={0}
+							variants={statVariants}
+							className="stat-card text-center bg-card border border-primary/30 rounded-lg p-6 md:p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,115,0,0.3)]"
+						>
 							<div className="text-4xl md:text-5xl font-bold text-primary mb-2 groovy">
 								50+
 							</div>
 							<p className="text-sm bloodlust md:text-3xl text-muted-foreground">
 								CTFs Won
 							</p>
-						</div>
+						</motion.div>
 
-						<div className="stat-card text-center bg-card border border-secondary/30 rounded-lg p-6 md:p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_30px_rgba(138,43,226,0.3)]">
+						<motion.div
+							custom={1}
+							variants={statVariants}
+							className="stat-card text-center bg-card border border-secondary/30 rounded-lg p-6 md:p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_30px_rgba(138,43,226,0.3)]"
+						>
 							<div className="text-4xl md:text-5xl font-bold text-secondary mb-2 groovy">
 								100+
 							</div>
 							<p className="text-sm bloodlust md:text-3xl text-muted-foreground">
 								Challenges Solved
 							</p>
-						</div>
+						</motion.div>
 
-						<div className="stat-card text-center bg-card border border-primary/30 rounded-lg p-6 md:p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,115,0,0.3)] sm:col-span-2 md:col-span-1">
+						<motion.div
+							custom={2}
+							variants={statVariants}
+							className="stat-card text-center bg-card border border-primary/30 rounded-lg p-6 md:p-8 transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,115,0,0.3)] sm:col-span-2 md:col-span-1"
+						>
 							<div className="text-4xl md:text-5xl font-bold text-primary mb-2 groovy">
 								1000+
 							</div>
 							<p className="text-sm bloodlust md:text-3xl text-muted-foreground">
 								Hours Hacking
 							</p>
-						</div>
-					</div>
+						</motion.div>
+					</motion.div>
 
 					{/* Join Section */}
-					<div className="join-section bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 border border-primary/30 rounded-lg p-8 md:p-12 text-center">
+					<motion.div
+						initial="hidden"
+						whileInView="visible"
+						viewport={{ once: true, margin: "-100px" }}
+						variants={joinVariants}
+						className="join-section bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 border border-primary/30 rounded-lg p-8 md:p-12 text-center"
+					>
 						<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-primary haunted">
 							Join Our Coven
 						</h2>
@@ -304,7 +400,7 @@ const Team = () => {
 								&gt; Ready to embrace the darkness?
 							</p>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</div>
