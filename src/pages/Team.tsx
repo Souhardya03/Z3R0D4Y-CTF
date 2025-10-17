@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import TeamCard from "@/components/TeamCard";
 import teamMember1 from "@/assets/team-member-1.jpg";
+import teamMember2 from "@/assets/team-member-2.jpg";
+import teamMember3 from "@/assets/team-member-3.jpg";
 import { motion, Variants } from "framer-motion";
 
 interface TeamMember {
@@ -76,7 +78,7 @@ const Team: React.FC = () => {
 		{
 			name: "Dharitri Roy",
 			role: "Challenge Creator",
-			image: "/images/Kaustav.jpg",
+			image: teamMember2,
 			specialty: "IT'27, JGEC",
 			linkedin: "https://www.linkedin.com/in/kaustav258",
 			twitter: "https://x.com/Kaustav25821",
@@ -85,7 +87,7 @@ const Team: React.FC = () => {
 		{
 			name: "Agniva Shee",
 			role: "Challenge Creator",
-			image: "/images/Kaustav.jpg",
+			image: teamMember3,
 			specialty: "EE'27, JGEC",
 			linkedin: "https://www.linkedin.com/in/kaustav258",
 			twitter: "https://x.com/Kaustav25821",
