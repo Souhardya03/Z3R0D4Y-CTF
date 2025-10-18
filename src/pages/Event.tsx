@@ -213,7 +213,7 @@ const Event = () => {
 							the hunt!
 						</p>
 						<Link
-							to={"https://zeroday.zerologon.co.in/"}
+							to={"https://register.zerologon.co.in"}
 							target="_blank">
 							<Button className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-[0_0_20px_rgba(255,115,0,0.5)] hover:shadow-[0_0_30px_rgba(255,115,0,0.8)] transition-all duration-300 text-base md:text-lg px-6 md:px-8 py-4 md:py-6 quick">
 								Register
