@@ -49,7 +49,7 @@ const Event = () => {
 											Date
 										</h3>
 										<p className="text-sm md:text-lg text-muted-foreground">
-											October 31st, 2025
+											October 30th, 2025
 										</p>
 									</div>
 								</div>
@@ -61,7 +61,7 @@ const Event = () => {
 											Time
 										</h3>
 										<p className="text-sm md:text-base text-muted-foreground">
-											12 A.M. to 11:59 P.M. IST
+											24 Hours IST
 										</p>
 									</div>
 								</div>
