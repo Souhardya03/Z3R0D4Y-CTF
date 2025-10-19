@@ -58,6 +58,15 @@ const Team: React.FC = () => {
 			github: "https://github.com/kaustav258",
 		},
 		{
+			name: "Adil Hossain Sana",
+			role: "Challenge Creator",
+			image: "/images/Adil.jpg",
+			specialty: "ME'26, JGEC",
+			linkedin: "https://www.linkedin.com/in/adil-hossain-sana-366871283",
+			twitter: "https://x.com/adilhossainsana",
+			github: "https://github.com/SpiderSec101",
+		},
+		{
 			name: "Amrik Hore",
 			role: "Challenge Creator",
 			image: teamMember1,
