@@ -17,7 +17,7 @@ const Home = () => {
 		// Target Halloween 31st Oct this year at 18:00 local
 		const d = new Date();
 		const year = d.getFullYear();
-		return new Date(`${year}-10-31T18:00:00`);
+		return new Date(`${year}-10-30T18:30:00`);
 	}, []);
 
 	useEffect(() => {
