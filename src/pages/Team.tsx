@@ -20,7 +20,7 @@ const Team: React.FC = () => {
 		{
 			name: "Amrik Hore",
 			role: "Event Lead",
-			image: teamMember1,
+			image: "/images/Amrik.jpg",
 			specialty: "ECE'27, JGEC",
 			linkedin: "https://www.linkedin.com/in/amrikhore/",
 			twitter: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1",
@@ -69,7 +69,7 @@ const Team: React.FC = () => {
 		{
 			name: "Amrik Hore",
 			role: "Challenge Creator",
-			image: teamMember1,
+			image: "/images/Amrik.jpg",
 			specialty: "ECE'27, JGEC",
 			linkedin: "https://www.linkedin.com/in/amrikhore/",
 			twitter: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1",
